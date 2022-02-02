@@ -1,0 +1,167 @@
+<!-- Create flight modal-->
+<div class="modal fade" id="createFlightModal" tabindex="-1" role="dialog" aria-labelledby="createFlightModal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createFlightModal">Create Flight</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addFlight="ngForm" (ngSubmit)="addNewFlight(addFlight)">
+          <div class="form-group">
+            <label for="flightId">FlightId</label>
+            <input type="number" class="form-control" id="id" aria-describedby="id" placeholder="Enter Flight Id"
+              ngModel name="id" required minlength="5" />
+          </div>
+          <div class="form-group">
+            <label for="flightTime">Flight Time</label>
+            <input type="datetime-local" class="form-control" id="flightTime" aria-describedby="flightTime"
+              placeholder="Select Flight Time" ngModel name="flightTime" required />
+          </div>
+          <div class="form-group">
+            <label for="totalSeats">Total Seats</label>
+            <input type="number" class="form-control" id="totalSeats" aria-describedby="totalSeats"
+              placeholder="Enter total number of seats" ngModel name="totalSeats" required minlength="2" />
+          </div>
+          <div class="form-group">
+            <label for="totalSeats">Available Seats</label>
+            <input type="number" class="form-control" id="availableSeats" aria-describedby="availableSeats"
+              placeholder="Enter availableSeats number of seats" ngModel name="availableSeats" required minlength="2" />
+          </div>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ENd -->
+
+<app-header></app-header>
+<div class="container col-md-12">
+  <button class="btn btn-primary" data-toggle="modal" data-target="#createFlightModal">
+    Create Flight
+  </button>
+  <h3>Click on any table to load the data</h3>
+  <hr />
+</div>
+
+<!--Available flights code-->
+<div class="container flightTable">
+  <div class="col-md-12">
+    <h3 style="font-weight:500;">Upcoming Flights</h3>
+    <table mat-table [dataSource]="availableFlightsDataSource" #availableFlightTableSort="matSort" matSort style="border: 2px solid black"
+      class="flightTable">
+      <ng-container matColumnDef="flightId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="flightTime">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Time</th>
+        <td mat-cell *matCellDef="let row">
+          <option>{{ row.flightTime | date: "short" }}</option>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalSeats">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>total Seats</th>
+        <td mat-cell *matCellDef="let row">{{ row.totalSeats }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="availableSeats">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>available Seats</th>
+        <td mat-cell *matCellDef="let row">{{ row.availableSeats }}</td>
+      </ng-container>
+      <ng-container matColumnDef="viewFlight">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>View</th>
+        <td mat-cell *matCellDef="let row">
+          <button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bd-example-modal-lg"
+            (click)="loadSingleFlight(row.id)">
+            View
+          </button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="deleteFlight">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
+        <td mat-cell *matCellDef="let row">
+          <button class="btn btn-danger" (click)="deletFlight(row.flightId)">
+            Delete
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="flightColumns"></tr>
+      <tr style="padding: 0" mat-row *matRowDef="let row; columns: flightColumns"></tr>
+    </table>
+
+    <mat-paginator #paginator1='matPaginator' [pageSizeOptions]="pageSizeOptions">
+    </mat-paginator>
+  </div>
+</div>
+<!--End of Avaialable flights code-->
+
+<!-- Previous FLights-->
+
+<div class="container flightTable">
+  <div class="col-md-12">
+    <h3 style="font-weight:500;">Previous Flights</h3>
+    <table mat-table [dataSource]="previousFlightsDataSource" #previousFlightTableSort="matSort" matSort style="border: 2px solid black"
+      class="flightTable">
+      <ng-container matColumnDef="flightId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="flightTime">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Time</th>
+        <td mat-cell *matCellDef="let row">
+          <option>{{ row.flightTime | date: "short" }}</option>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalSeats">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>total Seats</th>
+        <td mat-cell *matCellDef="let row">{{ row.totalSeats }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="availableSeats">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>available Seats</th>
+        <td mat-cell *matCellDef="let row">{{ row.availableSeats }}</td>
+      </ng-container>
+      <ng-container matColumnDef="viewFlight">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>View</th>
+        <td mat-cell *matCellDef="let row">
+          <button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bd-example-modal-lg"
+            (click)="loadSingleFlight(row.id)">
+            View
+          </button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="deleteFlight">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
+        <td mat-cell *matCellDef="let row">
+          <button class="btn btn-danger" (click)="deletFlight(row.flightId)">
+            Delete
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="previousFlightColumns"></tr>
+      <tr style="padding: 0" mat-row *matRowDef="let row; columns: previousFlightColumns"></tr>
+    </table>
+
+    <mat-paginator #paginator2='matPaginator' [pageSizeOptions]="pageSizeOptions2" (pageChange)="pageChange($event)">
+    </mat-paginator>
+  </div>
+</div>
+
+<!-- End of Previous flights code-->
+<app-footer></app-footer>

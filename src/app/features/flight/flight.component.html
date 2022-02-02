@@ -1,0 +1,195 @@
+<app-header></app-header>
+<div class="container">
+  <h4 style="color: red">
+    Red color : Person is Differently Abled
+    <span style="color: green">|| Green color : Person is normal </span>
+  </h4>
+  <h4>
+    Click on checkIn to checkIn passenger and click on undoCheckIn to remove
+    passenger from checkIn list
+  </h4>
+
+  <!-- Add passenger Modal -->
+  <div class="modal fade" id="addPassengerModal" tabindex="-1" role="dialog" aria-labelledby="addPassengerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="addPassengerModalLabel">Add passenger</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #addPassengerForm="ngForm" (ngSubmit)="addPassenger(addPassengerForm)">
+            <div class="form-group">
+              <label for="passengerFirstName">First Name</label>
+              <input type="text" class="form-control" id="passengerFirstName" aria-describedby="FirstName"
+                placeholder="Enter First Name" ngModel name="passengerFirstName" required minlength="1" />
+            </div>
+            <div class="form-group">
+              <label for="passengerLastName">Last Name</label>
+              <input type="text" class="form-control" id="passengerLastName" aria-describedby="LastName"
+                placeholder="Enter Last Name" ngModel name="passengerLastName" required minlength="1" />
+            </div>
+
+            <div class="form-group">
+              <label for="seatNumber">seat Number</label>
+              <input type="number" class="form-control" id="seatNumber" aria-describedby="seatNumber"
+                placeholder="Enter Seat Number" ngModel name="seatNumber" required minlength="5" />
+            </div>
+            <div class="form-group">
+              <label for="ticketId">Ticket ID</label>
+              <input type="number" class="form-control" id="id" aria-describedby="id" placeholder="Ticket ID" ngModel
+                name="id" required minlength="5" />
+            </div>
+            <div>
+              <input class="form-check-input" type="checkbox" value="" id="isInfant" ngModel name="isInfant" />
+              <label class="form-check-label" for="isInfant"> isInfant? </label>
+            </div>
+            <div>
+              <input class="form-check-input" type="checkbox" value="" id="isDifferentlyAbled" name="isDifferentlyAbled"
+                ngModel />
+              <label class="form-check-label" for="isDifferentlyAbled">
+                Differently abled?
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="ancillaryService">Ancillary Services</label>
+              <textarea class="form-control" id="ancillaryService" name="ancillaryService" ngModel="ancillaryService"
+                rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Edit passenger Modal -->
+  <div class="modal fade" id="editPassengerModal" tabindex="-1" role="dialog" aria-labelledby="editPassengerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="editPassengerModalLabel">
+            Edit passenger
+          </h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editPassengerForm="ngForm" (ngSubmit)="editPassenger(editPassengerForm)">
+            <div class="form-group">
+              <label for="passengerFirstName">First Name</label>
+              <input type="text" class="form-control" id="passengerFirstName" aria-describedby="FirstName"
+                placeholder="Enter First Name" ngModel name="passengerFirstName" required minlength="1"
+                value="{{ seat.passengerFirstName }}" />
+            </div>
+            <div class="form-group">
+              <label for="passengerLastName">Last Name</label>
+              <input type="text" class="form-control" id="passengerLastName" aria-describedby="LastName"
+                placeholder="Enter Last Name" ngModel name="passengerLastName" required minlength="1"
+                value="{{ seat.passengerLastName }}" />
+            </div>
+
+            <div class="form-group">
+              <label for="seatNumber">seat Number</label>
+              <input type="number" class="form-control" id="seatNumber" aria-describedby="seatNumber"
+                placeholder="Enter Seat Number" ngModel name="seatNumber" required minlength="5"
+                value="{{ seat.seatNumber }}" />
+            </div>
+            <div class="form-group">
+              <label for="ticketId">Ticket ID</label>
+              <input type="number" class="form-control" id="ticketId" aria-describedby="ticketId"
+                placeholder="Ticket ID" ngModel name="ticketId" required minlength="5" value="{{ seat.ticketId }}" />
+            </div>
+            <div>
+              <input class="form-check-input" type="checkbox" value="{{ seat.isInfant }}" id="isInfant" ngModel
+                name="isInfant" />
+              <label class="form-check-label" for="isInfant"> isInfant? </label>
+            </div>
+            <div>
+              <input class="form-check-input" type="checkbox" value="{{ seat.isDifferentlyAbled }}"
+                id="isDifferentlyAbled" name="isDifferentlyAbled" ngModel />
+              <label class="form-check-label" for="isDifferentlyAbled">
+                Differently abled?
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="ancillaryService">Ancillary Services</label>
+              <textarea class="form-control" id="ancillaryService" name="ancillaryService" ngModel="ancillaryService"
+                rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPassengerModal">
+    Add a passenger
+  </button>
+
+  <br>
+  <hr>
+
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let seat of allSeatsInFlight" style="margin-bottom: 10px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" [style.color]="
+                    seat.isDifferentlyAbled
+                    ? 'red'
+                    : 'green' || seat.isInfant
+                    ? 'green'
+                    : 'yellow'
+                    ">
+            Seat Number : {{ seat.seatNumber }}
+          </h5>
+          <p class="card-text">
+            <span style="font-weight: bold">Ticket Id :</span>
+            {{ seat.ticketId }}
+          </p>
+          <p class="card-text">
+            <span style="font-weight: bold">Anicillary Services :</span>
+            {{ seat.ancillaryService }}
+          </p>
+          <p>
+            <span style="font-weight: bold"> Infant ? </span>
+            {{ seat.isInfant }}
+          </p>
+          <p>
+            <span style="font-weight: bold"> Differently Abled ? </span>{{ seat.isDifferentlyAbled }}
+          </p>
+          <p>
+            <span style="font-weight: bold"> Passenger First Name : </span>{{ seat.passengerFirstName }}
+          </p>
+          <p>
+            <span style="font-weight: bold"> Passenger Last Name : </span>{{ seat.passengerLastName }}
+          </p>
+          <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPassengerModal">
+            Edit
+          </button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<app-footer></app-footer>

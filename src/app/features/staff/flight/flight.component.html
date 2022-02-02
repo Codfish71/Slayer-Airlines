@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="container">
+  <h4 style="color: red">
+    Red color : Person is Differently Abled
+    <span style="color: green">|| Green color : Person is normal </span>
+  </h4>
+  <h4>
+    Click on checkIn to checkIn passenger and click on undoCheckIn to remove
+    passenger from checkIn list
+  </h4>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let seat of allSeatsInFlight">
+        <div class="card w-30">
+          <div class="card-body">
+            <h5 class="card-title" [style.color]="
+                seat.isDifferentlyAbled
+                  ? 'red'
+                  : 'green' || seat.isInfant
+                  ? 'green'
+                  : 'yellow'
+              ">
+              Seat Number : {{ seat.seatNumber }}
+            </h5>
+            <p class="card-text">
+              <span style="font-weight: bold">Ticket Id :</span>
+              {{ seat.ticketId }}
+            </p>
+            <p class="card-text">
+              <span style="font-weight: bold">Anicillary Services :</span>
+              {{ seat.ancillaryService }}
+            </p>
+            <p>
+              <span style="font-weight: bold"> Infant ? </span>
+              {{ seat.isInfant }}
+            </p>
+            <p>
+              <span style="font-weight: bold"> Differently Abled ? </span>{{ seat.isDifferentlyAbled }}
+            </p>
+            <p>
+              <span style="font-weight: bold"> Passenger First Name : </span>{{ seat.passengerFirstName }}
+            </p>
+            <p>
+              <span style="font-weight: bold"> Passenger Last Name : </span>{{ seat.passengerLastName }}
+            </p>
+            <button *ngIf="!seat.isCheckedIn" class="btn btn-success"
+              (click)="checkInPassenger(flight.id, seat.seatNumber)">
+              CheckIn
+            </button>
+            <button *ngIf="seat.isCheckedIn" class="btn btn-primary" (click)="undoCheckIn(flight.id, seat.seatNumber)">
+              undoCheckIn
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

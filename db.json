@@ -1,0 +1,365 @@
+{
+  "passengers": [
+    {
+      "passportId": 1234,
+      "firstName": "Pratham",
+      "lastName": "Pendal",
+      "email": "abcd@gmail.com"
+    },
+    {
+      "passportId": 1235,
+      "firstName": "Aniket",
+      "lastName": "Maske",
+      "email": "aniket@gmail.com"
+    },
+    {
+      "passportId": 1236,
+      "firstName": "Preetam",
+      "lastName": "Yedur",
+      "email": "preetam1@gmail.com"
+    },
+    {
+      "passportId": 1237,
+      "firstName": "Preetam",
+      "lastName": "Pendal",
+      "email": "preetam2@gmail.com"
+    },
+    {
+      "passportId": 1238,
+      "firstName": "Omkar",
+      "lastName": "Y",
+      "email": "omkar@gmail.com"
+    }
+  ],
+  "admin": [
+    {
+      "firstName": "Amit",
+      "lasName": "Amit",
+      "email": "amit@gmail.com",
+      "phoneNumber": 1234567890
+    }
+  ],
+  "staff": [
+    {
+      "firstName": "Ajit",
+      "lastName": "Udata",
+      "email": "ajit@gmail.com",
+      "phone": 1234567890
+    }
+  ],
+  "flights": [
+    {
+      "id": 99999999,
+      "flightTime": "2022-12-20T00:00:00.000Z",
+      "totalSeats": 60,
+      "flightSeatInformation": [
+        {
+          "seatNumber": 1234,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "Paracetemol",
+          "isInfant": true,
+          "ticketId": 123456,
+          "passengerFirstName": "Pratham",
+          "passengerLastName": "Pendal"
+        },
+        {
+          "seatNumber": 1235,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": true,
+          "ancillaryService": "Omez",
+          "isInfant": false,
+          "ticketId": 123457,
+          "passengerFirstName": "Aniket",
+          "passengerLastName": "Maske"
+        },
+        {
+          "seatNumber": 1236,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "",
+          "isInfant": false,
+          "ticketId": 123457,
+          "passengerFirstName": "Preetam",
+          "passengerLastName": "Pendal"
+        },
+        {
+          "passengerFirstName": "Hinata",
+          "passengerLastName": "Shoyo",
+          "seatNumber": 556761,
+          "ticketId": 1234568,
+          "isInfant": "",
+          "isDifferentlyAbled": "",
+          "ancillaryService": ""
+        }
+      ],
+      "availableSeats": 56
+    },
+    {
+      "id": 99999990,
+      "flightTime": "2020-12-20T05:00:00.000Z",
+      "totalSeats": 60,
+      "flightSeatInformation": [
+        {
+          "seatNumber": 2235,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": true,
+          "ancillaryService": "O2",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "seatNumber": 2236,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "",
+          "isInfant": false,
+          "ticketId": 223457
+        }
+      ]
+    },
+    {
+      "id": 99999990,
+      "flightTime": "2022-12-20T05:00:00.000Z",
+      "totalSeats": 60,
+      "flightSeatInformation": [
+        {
+          "seatNumber": 2235,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": true,
+          "ancillaryService": "O2",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "seatNumber": 2236,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "",
+          "isInfant": false,
+          "ticketId": 223457
+        }
+      ]
+    },
+    {
+      "id": 99999990,
+      "flightTime": "2022-12-20T05:00:00.000Z",
+      "totalSeats": 60,
+      "flightSeatInformation": [
+        {
+          "seatNumber": 2235,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": true,
+          "ancillaryService": "O2",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "seatNumber": 2236,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "",
+          "isInfant": false,
+          "ticketId": 223457
+        }
+      ]
+    },
+    {
+      "id": 99999990,
+      "flightTime": "2022-12-20T05:00:00.000Z",
+      "totalSeats": 60,
+      "flightSeatInformation": [
+        {
+          "seatNumber": 2235,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": true,
+          "ancillaryService": "O2",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "seatNumber": 2236,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "",
+          "isInfant": false,
+          "ticketId": 223457
+        }
+      ]
+    },
+    {
+      "id": 99999990,
+      "flightTime": "2022-12-20T05:00:00.000Z",
+      "totalSeats": 60,
+      "flightSeatInformation": [
+        {
+          "seatNumber": 2235,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": true,
+          "ancillaryService": "O2",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "seatNumber": 2236,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "",
+          "isInfant": false,
+          "ticketId": 223457
+        }
+      ]
+    },
+    {
+      "id": 99999991,
+      "flightTime": "2020-12-20T05:00:00.000Z",
+      "totalSeats": 60,
+      "flightSeatInformation": [
+        {
+          "seatNumber": 2235,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": true,
+          "ancillaryService": "O2",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "seatNumber": 2236,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "passengerFirstName": "Pratham",
+          "passengerLastName": "Pen",
+          "seatNumber": 123412,
+          "ticketId": 156723,
+          "isInfant": "",
+          "isDifferentlyAbled": "",
+          "ancillaryService": ""
+        },
+        {
+          "passengerFirstName": "Pratham",
+          "passengerLastName": "Pen",
+          "seatNumber": 123412,
+          "ticketId": 156723,
+          "isInfant": "",
+          "isDifferentlyAbled": "",
+          "ancillaryService": ""
+        },
+        {
+          "passengerFirstName": "Pratham",
+          "passengerLastName": "Pen",
+          "seatNumber": 123412,
+          "ticketId": 156723,
+          "isInfant": "",
+          "isDifferentlyAbled": "",
+          "ancillaryService": ""
+        }
+      ],
+      "availableSeats": 58
+    },
+    {
+      "id": 99999992,
+      "flightTime": "2020-12-20T05:00:00.000Z",
+      "totalSeats": 60,
+      "flightSeatInformation": [
+        {
+          "seatNumber": 2235,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": true,
+          "ancillaryService": "O2",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "seatNumber": 2236,
+          "isCheckedIn": false,
+          "isDifferentlyAbled": false,
+          "ancillaryService": "",
+          "isInfant": false,
+          "ticketId": 223457
+        },
+        {
+          "passengerFirstName": "asda",
+          "passengerLastName": "SDFSDF",
+          "seatNumber": 123234,
+          "ticketId": 213213,
+          "isInfant": "",
+          "isDifferentlyAbled": "",
+          "ancillaryService": "ancillaryService"
+        },
+        {
+          "passengerFirstName": "asd",
+          "passengerLastName": "safsdfdsg",
+          "seatNumber": 545452,
+          "id": 453534,
+          "isInfant": "",
+          "isDifferentlyAbled": "",
+          "ancillaryService": "ancillaryService"
+        }
+      ],
+      "availableSeats": 57
+    },
+    {
+      "id": 13354353,
+      "flightTime": "2022-01-11T09:54:00.000Z",
+      "totalSeats": 123,
+      "availableSeats": 123,
+      "flightSeatInformation": [
+        {
+          "passengerFirstName": "Pratham",
+          "passengerLastName": "asds",
+          "seatNumber": 1,
+          "ticketId": 1233234,
+          "isInfant": true,
+          "isDifferentlyAbled": "",
+          "ancillaryService": "Dolo mg 5"
+        }
+      ]
+    }
+  ],
+  "tickets": [
+    {
+      "passengerFirstName": "Pratham",
+      "passengerLastName": "Pen",
+      "seatNumber": 123412,
+      "ticketId": 156723,
+      "isInfant": "",
+      "isDifferentlyAbled": "",
+      "ancillaryService": "",
+      "id": 123461
+    },
+    {
+      "passengerFirstName": "Pratham",
+      "passengerLastName": "Pen",
+      "seatNumber": 123412,
+      "ticketId": 156723,
+      "isInfant": "",
+      "isDifferentlyAbled": "",
+      "ancillaryService": "",
+      "id": 123462
+    },
+    {
+      "passengerFirstName": "asda",
+      "passengerLastName": "SDFSDF",
+      "seatNumber": 123234,
+      "ticketId": 213213,
+      "isInfant": "",
+      "isDifferentlyAbled": "",
+      "ancillaryService": "ancillaryService",
+      "id": 123463
+    },
+    {
+      "passengerFirstName": "asd",
+      "passengerLastName": "safsdfdsg",
+      "seatNumber": 545452,
+      "id": 453534,
+      "isInfant": "",
+      "isDifferentlyAbled": "",
+      "ancillaryService": "ancillaryService"
+    }
+  ]
+}

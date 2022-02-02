@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="container loginbox">
+  <h2 *ngIf="isAdmin" class="tagline">Welcome Admin</h2>
+  <h2 *ngIf="!isAdmin" class="tagline">Welcome Staff</h2>
+  <h3 class="text-center">Login with Google</h3>
+  <button type="button" (click)="loginWithGoogle()" class="btn btn-primary mb-5">
+    Google Login
+  </button>
+</div>
+<app-footer></app-footer>

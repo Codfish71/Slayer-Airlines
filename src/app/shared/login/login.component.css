@@ -1,0 +1,11 @@
+.loginbox{
+    text-align: center;
+    height: 450px;
+    border: 2px solid var(--green);
+    background-color: var(--grey);
+    border-radius: 5px;
+}
+.tagline{
+    margin-top: 150px;
+    align-items: center;
+}
